@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GGL Esp..</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #D62828;
+      --accent: #F77F00;
+      --bg: #fff;
+      --text: #111;
+      --subtext: #555;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--bg);
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    header h1 {
+      margin-left: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .download-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #43a047;
+    }
+
+    .banner-wrapper {
+      box-shadow: 0 6px 16px var(--shadow);
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .banner {
+      width: 100%;
+      display: block;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .container {
+      background-color: var(--bg);
+      margin: 30px auto;
+      padding: 35px 25px;
+      max-width: 850px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .container h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .container p {
+      font-size: 1rem;
+      color: var(--subtext);
+      margin-bottom: 16px;
+    }
+
+    .carousel-container {
+      margin: 40px 20px;
+      max-width: 850px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    footer {
+      background-color: var(--bg);
+      padding: 40px 20px;
+      border-top: 1px solid #eee;
+      box-shadow: 0 -1px 6px var(--shadow);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo {
+      height: 48px;
+    }
+
+    .footer-right {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-row {
+      font-size: 0.95rem;
+      color: var(--subtext);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-row i {
+      color: var(--primary);
+      min-width: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-left {
+        align-items: center;
+      }
+
+      .footer-right {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      .download-btn {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+
+      .container {
+        padding: 25px 18px;
+        margin-top: 20px;
+      }
+
+      .carousel img {
+        width: 100%;
+      }
+
+      .arrow {
+        padding: 8px;
+        font-size: 1rem;
+      }
+
+      .footer-row {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="icon.png" alt="GGL Logo" />
+      <h1>GGL Esp..</h1>
+    </div>
+    <a href="https://www.dropbox.com/scl/fi/lb3xyof1jooj2q0g6thrv/ggl_esport.apk?rlkey=0qvn81uvvlnpide17kqxyhjxf&st=a1jkxoar&dl=1
+" class="download-btn" download>
+      ⬇ Download APK
+    </a>
+  </header>
+
+  <div class="banner-wrapper" style="margin: 20px;">
+    <img src="banner.png" alt="Gully Gamers League Banner" class="banner" />
+  </div>
+
+  <div class="container">
+    <h2>Welcome to Gully Gamers League</h2>
+    <p>
+      Gully Gamers League is your battlefield. A bold, real-money gaming zone where your rummy and gaming skills earn
+      you respect—and rupees.
+    </p>
+    <p>
+      Dive into adrenaline-fueled tournaments, daily matches, and reward systems made for serious players. No BS, just
+      pure skill vs. skill.
+    </p>
+    <p>
+      Whether you're in it for fun or fierce competition, we’ve got a seat at the table. Start grinding, start winning.
+    </p>
+
+    <div style="margin-top: 20px; text-align: center;">
+      <a href="https://www.dropbox.com/scl/fi/lb3xyof1jooj2q0g6thrv/ggl_esport.apk?rlkey=0qvn81uvvlnpide17kqxyhjxf&st=a1jkxoar&dl=1
+" class="download-btn" download>
+        <i class="fas fa-download"></i> Download APK Now
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Carousel Section -->
+  <div class="carousel-container">
+    <button class="arrow left" onclick="prevSlide()">←</button>
+    <div class="carousel" id="carousel">
+      <img src="sc1.jpeg" alt="Screenshot 1" />
+      <img src="sc2.jpeg" alt="Screenshot 2" />
+      <img src="sc3.jpeg" alt="Screenshot 3" />
+      <img src="sc4.jpeg" alt="Screenshot 4" />
+      <img src="sc6.jpeg" alt="Screenshot 4" />
+      <img src="sc5.jpeg" alt="Screenshot 4" />
+      <img src="sc7.jpeg" alt="Screenshot 4" />
+    </div>
+    <button class="arrow right" onclick="nextSlide()">→</button>
+  </div>
+
+  <!-- Updated Footer -->
+  <footer>
+    <div class="footer-flex">
+      <!-- Left: Logo + Button -->
+      <div class="footer-left">
+        <img src="icon.png" alt="Logo" class="footer-logo" />
+        <a href="https://www.dropbox.com/scl/fi/lb3xyof1jooj2q0g6thrv/ggl_esport.apk?rlkey=0qvn81uvvlnpide17kqxyhjxf&st=a1jkxoar&dl=1
+" class="download-btn" style="margin-top: 12px; min-width: 140px;" download>
+          <i class="fas fa-download"></i> APK Download
+        </a>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="footer-right">
+        <div class="footer-row"><i class="fas fa-envelope"></i> support@gullygamersleague.com</div>
+        <div class="footer-row"><i class="fas fa-phone-alt"></i> +91 93379‑54743</div>
+        <div class="footer-row"><i class="fab fa-whatsapp"></i> +91 93379‑54743</div>
+        <div class="footer-row"><i class="fas fa-map-marker-alt"></i> India</div>
+        <div class="footer-row"><i class="far fa-copyright"></i> 2025 Gully Gamers League</div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const totalImages = carousel.children.length;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      updateCarousel();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      updateCarousel();
+    }
+
+    // Swipe support (basic)
+    let startX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (diff > 50) nextSlide();
+      else if (diff < -50) prevSlide();
+    });
+  </script>
+</body>
+
+</html>
